@@ -1,0 +1,22 @@
+{
+            "MerchantRequestID":"20042-1501733-1",
+            "CheckoutRequestID":"ws_CO_DMZ_1190808671_22092019221053328",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        {
+            "MerchantRequestID":"12879-1467243-1",
+            "CheckoutRequestID":"ws_CO_DMZ_401851332_22092019222146289",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        {
+            "MerchantRequestID":"10166-1492382-1",
+            "CheckoutRequestID":"ws_CO_DMZ_1191199306_22092019223231005",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        

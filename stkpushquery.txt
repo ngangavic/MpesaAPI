@@ -1,0 +1,9 @@
+{
+            "ResponseCode": "0",
+            "ResponseDescription":"The service request has been accepted successsfully",
+            "MerchantRequestID":"20042-1501733-1",
+            "CheckoutRequestID":"ws_CO_DMZ_1190808671_22092019221053328",
+            "ResultCode": "1037",
+            "ResultDesc":"[STK_CB - ]DS timeout."
+        }
+        
