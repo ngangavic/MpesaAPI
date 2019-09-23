@@ -37,7 +37,7 @@ $curl_response = curl_exec($curl);
 print_r($curl_response);
 
 //log
-$logFile = 'b2c.txt';
+$logFile = 'logs/b2c.txt';
 $log = fopen($logFile,"a");
 fwrite($log,$curl_response);
 fclose($log);

@@ -28,7 +28,7 @@ $curl_response = curl_exec($curl);
 print_r($curl_response);
 
 /******* log the response**********/
-$logFile = "c2b.txt";
+$logFile = "logs/c2b.txt";
 // write the M-PESA Response to file
 $log = fopen($logFile, "a");
 fwrite($log, $curl_response);

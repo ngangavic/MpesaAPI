@@ -25,7 +25,7 @@ $curl_post_data = array(
     'AccountReference' => 'KAR400T',//Account Reference mandatory for “BusinessPaybill” CommandID.
     'Remarks' => 'Payment of car hire fee',//	Comments that are sent along with the transaction.
     'QueueTimeOutURL' => 'http://jochebedscrib.org/victor/time_out.php',//The path that stores information of time out transactions.
-    'ResultURL' => 'http://jochebedscrib.org/victor/result.php'//The path that receives results from M-Pesa
+    'ResultURL' => 'http://jochebedscrib.org/victor/result.php'//The path that receives logs from M-Pesa
 );
 
 $data_string = json_encode($curl_post_data);
@@ -38,7 +38,7 @@ $curl_response = curl_exec($curl);
 print_r($curl_response);
 
 //log
-$logFile = 'b2b.txt';
+$logFile = 'logs/b2b.txt';
 $log = fopen($logFile,"a");
 fwrite($log,$curl_response);
 fclose($log);

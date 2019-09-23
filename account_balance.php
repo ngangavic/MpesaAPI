@@ -30,7 +30,7 @@ $curl_response = curl_exec($curl);
 print_r($curl_response);
 
 //log response
-$logFile = 'accountBalance.txt';
+$logFile = 'logs/accountBalance.txt';
 $log = fopen($logFile,"a");
 fwrite($log,$curl_response);
 fclose($log);

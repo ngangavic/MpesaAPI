@@ -28,7 +28,7 @@ $curl_response = curl_exec($curl);
 print_r($curl_response);
 
 //log response
-$logFile = "stkpushquery.txt";
+$logFile = "logs/stkpushquery.txt";
 // write the M-PESA Response to file
 $log = fopen($logFile, "a");
 fwrite($log, $curl_response);
