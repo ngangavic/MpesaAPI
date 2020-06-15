@@ -8,7 +8,7 @@ require "access_token.php";//access token
 
 $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';//sktpush url
 $BusinessShortCode='174379';//shortcode
-$Passkey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';//passkey
+$Passkey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c9';//passkey
 $Timestamp=date("YmdGis");//timestamp
 $Password=base64_encode($BusinessShortCode.$Passkey.$Timestamp);//password encoded Base64
 
@@ -31,10 +31,10 @@ $curl_post_data = array(
     'Timestamp' => $Timestamp,//The timestamp of the transaction in the format yyyymmddhhiiss.
     'TransactionType' => 'CustomerPayBillOnline',//The transaction type to be used for this request.
     'Amount' => '1000',//The amount to be transacted.
-    'PartyA' => '254708374149',//The MSISDN sending the funds.
+    'PartyA' => '254700352822',//The MSISDN sending the funds.
     'PartyB' => '174379',//The organization shortcode receiving the funds
-    'PhoneNumber' => '254708374149',//The MSISDN sending the funds.
-    'CallBackURL' => 'http://jochebedscrib.org/victor/callback.php',//The url to where logs from M-Pesa will be sent to.
+    'PhoneNumber' => '254700352822',//The MSISDN sending the funds.
+    'CallBackURL' => 'http://j/callback.php',//The url to where logs from M-Pesa will be sent to.
     'AccountReference' => 'STK001',//Used with M-Pesa PayBills.
     'TransactionDesc' => 'stk testing'//A description of the transaction.
 );

@@ -1,7 +1,7 @@
 <?php
 //Authenticate your app
-$consumerKey='5GR23AWdx2WUHXnnHT3nIzV923ph48Tc';
-$consumerSecret='GWq3PNtO398GXG81';
+$consumerKey='5SHGTCD6bpgritJCKpARrIiu8Qc2APAF';
+$consumerSecret='iPGjpWZCb0qMjWpd';
 $headers=['Content-Type:application/json; charset=utf8'];
 $url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 $curl = curl_init($url);
