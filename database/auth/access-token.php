@@ -15,4 +15,11 @@ $result = curl_exec($curl);
 $status = curl_getinfo($curl,CURLINFO_HTTP_CODE);
 $result = json_decode($result);
 $access_token = $result->access_token;
+
+//log response
+$logFile = 'logs/accessToken.txt';
+$log = fopen($logFile,"a");
+fwrite($log,$access_token);
+fclose($log);
+
 echo 'The access token is: '.$access_token.'</br> Status: '.$status;
