@@ -1,2 +1,2 @@
 database/auth/secrets.php
-database/logs/accessToken.txt
+database/logs/
