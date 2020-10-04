@@ -13,8 +13,8 @@ $curl_post_data = array(
   //Fill in the request parameters with valid values
   'ShortCode' => '601523',
   'ResponseType' => 'Registered',
-  'ConfirmationURL' => 'https://e0a93b8d69c7.ngrok.io/MpesaAPI/database/c2b/confirmation.php',
-  'ValidationURL' => 'https://e0a93b8d69c7.ngrok.io/MpesaAPI/database/c2b/validation_url.php'
+  'ConfirmationURL' => 'https://e0a93b8d69c7.ngrok.io/PaymentAPI/saving/c2b/confirmation.php',
+  'ValidationURL' => 'https://e0a93b8d69c7.ngrok.io/PaymentAPI/saving/c2b/validation_url.php'
 );
 
 $data_string = json_encode($curl_post_data);
