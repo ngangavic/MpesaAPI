@@ -35,7 +35,21 @@ $password=base64_encode($businessShortCode.$passKey.$timestamp);//password encod
  curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
  
  $curl_response = curl_exec($curl);
- print_r($curl_response);
+//  print_r($curl_response);
+
+$decode=json_decode($curl_response);
+
+if(array_key_exists("errorCode",$decode)){
+echo 'Error';
+}else{
+echo 'Success';
+}
+
+//  $merchantRequestID=$decode->MerchantRequestID;
+//  $checkoutRequestID=$decode->CheckoutRequestID;
+//  $responseCode=$decode->ResponseCode;
+//  $responseDescription=$decode->ResponseDescription;
+//  $customerMessage=$decode->CustomerMessage;
 
  //log response
 $logFile = '../logs/lnmpResponse.txt';
@@ -43,4 +57,4 @@ $log = fopen($logFile,"a");
 fwrite($log,$curl_response."\n");
 fclose($log);
  
- echo $curl_response;
+//  echo $curl_response;
