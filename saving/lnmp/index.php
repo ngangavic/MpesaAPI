@@ -2,6 +2,8 @@
 
 require "../auth/access-token.php";
 
+require "../connection.php";
+
  $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
  $businessShortCode='174379';//shortcode
@@ -40,16 +42,32 @@ $password=base64_encode($businessShortCode.$passKey.$timestamp);//password encod
 $decode=json_decode($curl_response);
 
 if(array_key_exists("errorCode",$decode)){
+  $requestId=$decode->requestId;
+  $errorCode=$decode->errorCode;
+  $errorMessage=$decode->errorMessage;
+
+$stmt=$connection->prepare("INSERT INTO tbl_lnmp_error(requestId,errorCode,errorMessage)VALUES(?,?,?)");
+$stmt->bind_param("sss",$requestId,$errorCode,$errorMessage);
+$stmt->execute();
+$stmt->close();
+$connection->close();
+
 echo 'Error';
 }else{
+  $merchantRequestID=$decode->MerchantRequestID;
+ $checkoutRequestID=$decode->CheckoutRequestID;
+ $responseCode=$decode->ResponseCode;
+ $responseDescription=$decode->ResponseDescription;
+ $customerMessage=$decode->CustomerMessage;
+
+ $stmt=$connection->prepare("INSERT INTO tbl_lnmp_success(merchantRequestID,checkoutRequestID,responseCode,responseDescription,customerMessage)VALUES(?,?,?,?,?)");
+ $stmt->bind_param("sssss",$merchantRequestID,$checkoutRequestID,$responseCode,$responseDescription,$customerMessage);
+ $stmt->execute();
+ $stmt->close();
+ $connection->close();
+
 echo 'Success';
 }
-
-//  $merchantRequestID=$decode->MerchantRequestID;
-//  $checkoutRequestID=$decode->CheckoutRequestID;
-//  $responseCode=$decode->ResponseCode;
-//  $responseDescription=$decode->ResponseDescription;
-//  $customerMessage=$decode->CustomerMessage;
 
  //log response
 $logFile = '../logs/lnmpResponse.txt';
