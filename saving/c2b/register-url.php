@@ -12,9 +12,9 @@ curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json','Au
 $curl_post_data = array(
   //Fill in the request parameters with valid values
   'ShortCode' => '601523',
-  'ResponseType' => 'Registered',
-  'ConfirmationURL' => 'https://e0a93b8d69c7.ngrok.io/PaymentAPI/saving/c2b/confirmation.php',
-  'ValidationURL' => 'https://e0a93b8d69c7.ngrok.io/PaymentAPI/saving/c2b/validation_url.php'
+  'ResponseType' => 'Confirmed',
+  'ConfirmationURL' => 'http://f95844a61e56.ngrok.io/PaymentAPI/saving/c2b/confirmation.php',
+  'ValidationURL' => 'http://f95844a61e56.ngrok.io/PaymentAPI/saving/c2b/validation_url.php'
 );
 
 $data_string = json_encode($curl_post_data);
