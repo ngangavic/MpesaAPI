@@ -25,7 +25,7 @@ $password=base64_encode($businessShortCode.$passKey.$timestamp);//password encod
    'PartyA' => '254700352822',
    'PartyB' => $businessShortCode,
    'PhoneNumber' => '254700352822',
-   'CallBackURL' => 'https://e0a93b8d69c7.ngrok.io/PaymentAPI/saving/lnmp/lnmp_callback.php',
+   'CallBackURL' => 'http://f95844a61e56.ngrok.io/PaymentAPI/saving/lnmp/lnmp_callback.php',
    'AccountReference' => 'Vic0001',
    'TransactionDesc' => 'Order Vic0001 payment'
  );
