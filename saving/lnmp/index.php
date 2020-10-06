@@ -60,8 +60,8 @@ echo 'Error';
  $responseDescription=$decode->ResponseDescription;
  $customerMessage=$decode->CustomerMessage;
 
- $stmt=$connection->prepare("INSERT INTO tbl_lnmp_success(merchantRequestID,checkoutRequestID,responseCode,responseDescription,customerMessage)VALUES(?,?,?,?,?)");
- $stmt->bind_param("sssss",$merchantRequestID,$checkoutRequestID,$responseCode,$responseDescription,$customerMessage);
+ $stmt=$connection->prepare("INSERT INTO tbl_lnmp_success(merchantRequestID,checkoutRequestID,responseCode,responseDescription,customerMessage,businessShortCode,timestamp,password)VALUES(?,?,?,?,?,?,?,?)");
+ $stmt->bind_param("ssssssss",$merchantRequestID,$checkoutRequestID,$responseCode,$responseDescription,$customerMessage,$businessShortCode,$timestamp,$password);
  $stmt->execute();
  $stmt->close();
  $connection->close();
