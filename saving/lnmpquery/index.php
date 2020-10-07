@@ -25,6 +25,23 @@ $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query';
   
   $curl_response = curl_exec($curl);
   print_r($curl_response);
+
+  $decode=json_decode($curl_response);
+
+  if(array_key_exists("errorCode",$decode)){
+      $requestId=$decode->requestId;
+      $errorCode=$decode->errorCode;
+      $errorMessage=$decode->errorMessage;
+
+  }else{
+      $responseCode=$decode->ResponseCode;
+      $responseDescription=$decode->ResponseDescription;
+      $merchantRequestID=$decode->MerchantRequestID;
+      $checkoutRequestID=$decode->CheckoutRequestID;
+      $resultCode=$decode->ResultCode;
+      $resultDesc=$decode->ResultDesc;
+
+  }
   
   //log response
 $logFile = '../logs/lnmpQuery.txt';
